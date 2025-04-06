@@ -1,0 +1,94 @@
+# ScreenShare Plugin Configuration
+# Version: 1.0
+
+# Cooldown settings (in seconds)
+cooldown-time: 120
+
+# Command restrictions
+command-restrictions:
+  whitelist:
+    - "discord"
+    - "admit"
+    - "help"
+  blacklist:
+    - "trade"
+
+# Punishment commands (use %player% as placeholder)
+punishments:
+  blacklisted-command: "tempban %player% 7d Using restricted command while being checked"
+  leave: "tempban %player% 14d Leaving while being checked"
+  cheating: "ban %player% 30d Cheating (Screenshare)"
+  no-cooperating: "ban %player% 30d Non-Cooperation (Screenshare)"
+  admit: "ban %player% 30d Admitted Guilt (Screenshare)"
+
+# Help messages (supports MiniMessage formatting)
+help:
+  header: "<gradient:gold:yellow>PoisonSS Commands</gradient>"
+  footer: "<gray>Plugin version: <white><version>"
+  commands:
+    # Core Commands
+    ss:
+      "<click:suggest_command:'/ss '><hover:show_text:'<gray>Initiate screenshare\n<white>Permission: commands.staff'><white>/ss <player></hover></click> - <gray>Start screensharing a player"
+    ssclear:
+      "<click:suggest_command:'/ssclear '><hover:show_text:'<gray>Clear from screenshare\n<white>Permission: commands.staff'><white>/ssclear <player></hover></click> - <gray>Release a player"
+    sscheck:
+      "<click:suggest_command:'/sscheck'><hover:show_text:'<gray>Check active screenshares\n<white>Permission: commands.staff'><white>/sscheck</hover></click> - <gray>List screened players"
+    ssstat:
+      "<click:suggest_command:'/ssstat '><hover:show_text:'<gray>Check ss stats\n<white>Permission: commands.staff'><white>/ssstat <player></hover></click> - <gray>Check ss stats"
+
+    # Punishment Commands
+    ssadmit:
+      "<click:suggest_command:'/ssadmit'><hover:show_text:'<gray>Mark player as admitted guilt\n<white>Permission: commands.staff'><white>/ssadmit</hover></click> - <gray>Confirm player admission"
+    sscheating:
+      "<click:suggest_command:'/sscheating'><hover:show_text:'<gray>Mark player as cheating\n<white>Permission: commands.staff'><white>/sscheating</hover></click> - <gray>Confirm cheating during SS"
+    ssno-cooperating:
+      "<click:suggest_command:'/ssno-cooperating'><hover:show_text:'<gray>Mark player as non-cooperative\n<white>Permission: commands.staff'><white>/ssno-cooperating</hover></click> - <gray>Confirm non-cooperation"
+
+    # Setup Commands
+    setssroom:
+      "<click:suggest_command:'/setssroom'><hover:show_text:'<gray>Set screenshare room location\n<white>Permission: op'><white>/setssroom</hover></click> - <gray>Set SS location"
+    setreleasezone:
+      "<click:suggest_command:'/setreleasezone'><hover:show_text:'<gray>Set release zone location\n<white>Permission: op'><white>/setreleasezone</hover></click> - <gray>Set release point"
+
+    # Utility Commands
+    ssreload:
+      "<click:suggest_command:'/ssreload'><hover:show_text:'<gray>Reload plugin configuration\n<white>Permission: op'><white>/ssreload</hover></click> - <gray>Reload plugin files"
+    sshelp:
+      "<click:suggest_command:'/sshelp'><hover:show_text:'<gray>Show this help menu'><white>/sshelp</hover></click> - <gray>Command help"
+
+# System messages (supports MiniMessage formatting)
+messages:
+  only-players: "<red>Only players can execute this command."
+  no-permission: "<red>You don't have permission for this command."
+  ss-usage: "<red>Usage: /ss <player>"
+  player-offline: "<red>This player is not online."
+  already-ssed: "<red><target> is already being screened by <staff>"
+  cannot-ss: "<red>You cannot screen this player."
+  cannot-ss-self: "<red>You cannot screen yourself."
+  no-ssroom: "<red>The screenshare room has not been set."
+  cooldown: "<red>You screened someone <elapsed> ago, you may screen someone again in <remaining>."
+  ss-title: "<gradient:gold:yellow>SCREENSHARE!"
+  ss-subtitle: "<white>Obey staff commands or you will be banned."
+  ss-broadcast: "<dark_gray>[<light_purple>ꜱᴄʀᴇᴇɴ <white>ꜱʜᴀʀᴇ<dark_gray>]<light_purple> <target> <white>ɪꜱ ʙᴇɪɴɢ ꜱᴄʀᴇᴇɴᴇᴅ ʙʏ <light_purple><staff>"
+  clearss-usage: "<red>Usage: /clearss <player>"
+  not-ssed: "<red>That player is not being screened."
+  no-releasezone: "<red>The release zone has not been set."
+  cleared-title: "<green>CLEARED!"
+  cleared-subtitle: "<white>by <staff>"
+  clear-broadcast: "<dark_gray>[<light_purple>ꜱᴄʀᴇᴇɴ <white>ꜱʜᴀʀᴇ<dark_gray>]<light_purple> <target> <white>ɪꜱ ʙᴇɪɴɢ ʀᴇʟᴇᴀꜱᴇᴅ ʙʏ <light_purple><staff>"
+  admit-message: "<red>You have been banned for admitting to cheating."
+  not-being-ssed: "<red>You are not being screened."
+  no-commands: "<red>You cannot use commands while being screened!"
+  ssroom-set: "<green>Successfully set SS room to your current location"
+  releasezone-set: "<green>Successfully set release zone to your current location"
+  not-screening: "<red>You are not currently screening any player."
+  punish-success: "<green>Banned <white><target> <green>for <white><reason>"
+  ssstat-usage: "<red>Usage: /ssstat <staff>"
+  ssstat-header: "<gold>ScreenShare Stats for <white><staff>"
+
+# Permission settings
+permissions:
+  staff: commands.staff
+  exempt: ss.exempt
+  bypass-cooldown: screenshare.bypass.cooldown
+  reload: screenshare.reload
