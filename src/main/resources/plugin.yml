@@ -1,0 +1,62 @@
+name: PoisonSS
+version: '1.0'
+main: me.erpand.poisonss.poisonss
+api-version: '1.20'
+authors: [ ItzErpandX ]
+description: Highly customizable screensharing system originally developed for PoisonBox.
+website: https://github.com/ItzErpandX
+commands:
+  ss:
+    description: Initiate a screenshare with a player
+    usage: /ss <player>
+    aliases: [screenshare]
+  ssclear:
+    description: Clear a player from screenshare
+    usage: /ssclear <player>
+    aliases: [clearscreenshare, releasescreen, clearss]
+  sscheck:
+    description: Check who is currently being screened
+    usage: /sscheck
+  setssroom:
+    description: Set the screenshare room location
+    usage: /setssroom
+  setreleasezone:
+    description: Set the release zone location
+    usage: /setreleasezone
+  admit:
+    description: Admit to cheating while being screened
+    usage: /admit
+  ssreload:
+    description: Reload the plugin configuration
+    usage: /ssreload
+    permission: screenshare.reload
+    aliases: [screensharereload]
+    commands:
+  sshelp:
+    description: Show ScreenShare command help
+    usage: /sshelp
+    aliases: [screensharehelp]
+  sscheating:
+    description: Ban a player for cheating during screenshare
+  ssno-cooperating:
+    description: Ban a player for non-cooperation during screenshare
+  ssadmit:
+    description: Ban a player who admitted guilt
+  ssstat:
+    description: Check screenshare statistics for a staff member
+    usage: /ssstat <player>
+permissions:
+  commands.staff:
+    description: Access to staff screenshare commands
+    default: op
+    children:
+      screenshare.bypass.cooldown: true
+  ss.exempt:
+    description: Immunity from being screenshared
+    default: false
+  screenshare.reload:
+    description: Permission to reload plugin configuration
+    default: op
+  screenshare.bypass.cooldown:
+    description: Bypass command cooldowns
+    default: false
