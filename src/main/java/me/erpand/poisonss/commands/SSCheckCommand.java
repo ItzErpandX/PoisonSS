@@ -33,11 +33,11 @@ public class SSCheckCommand implements CommandExecutor {
 
         Set<UUID> ssPlayers = dataManager.getSSPlayers();
         if (ssPlayers.isEmpty()) {
-            sender.sendMessage(mm.deserialize("<gray>No players are currently being ss-ed."));
+            sender.sendMessage(mm.deserialize(plugin.getConfig().getString("messages.no-players-in-ss", "<gray>No players are currently being ss-ed.")));
             return true;
         }
 
-        Component message = mm.deserialize("<gold>Players currently being ss-ed:");
+        Component message = mm.deserialize(plugin.getConfig().getString("messages.players-in-ss", "<gold>Players currently being ss-ed:"));
         sender.sendMessage(message);
 
         for (UUID uuid : ssPlayers) {
