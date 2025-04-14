@@ -64,6 +64,8 @@ help:
 messages:
   only-players: "<red>Only players can execute this command."
   no-permission: "<red>You don't have permission for this command."
+  no-players-in-ss: "<gray>No players are currently being ss-ed."
+  players-in-ss: "<gold>Players currently being ss-ed:"
   ss-usage: "<red>Usage: /ss <player>"
   player-offline: "<red>This player is not online."
   already-ssed: "<red><target> is already being screened by <staff>"
