@@ -13,7 +13,7 @@ commands:
   ssclear:
     description: Clear a player from screenshare
     usage: /ssclear <player>
-    aliases: [clearscreenshare, releasescreen, clearss]
+    aliases: [clearscreenshare, releasescreen, clearss, unss]
   sscheck:
     description: Check who is currently being screened
     usage: /sscheck
